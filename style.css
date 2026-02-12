@@ -1,72 +1,61 @@
+/* ========== POLICE (écrase Bootstrap) ========== */
+:root {
+  --bs-font-sans-serif: Georgia, 'Times New Roman', serif;
+  --bs-body-font-family: Georgia, 'Times New Roman', serif;
+}
 
-
-/* Reset minimal */
-* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Georgia, 'Times New Roman', serif !important;
   font-size: 18px;
   line-height: 1.6;
   color: #404040f5;
-
-    /* ... tes autres propriétés ... */
   background-image: url('img/jef-1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  /* Garde le blanc cassé comme couleur de secours */
   background-color: #faf9f6;
 }
 
-/* Header discret */
-header {
-  position: fixed;           /* ← AJOUTE ça */
-  top: 0;                    /* ← AJOUTE ça */
-  left: 0;                   /* ← AJOUTE ça */
-  right: 0;                  /* ← AJOUTE ça */
-  z-index: 100;              /* ← AJOUTE ça */
-  background: rgba(163, 158, 158, 0.652);  /* ← REMPLACE */
-  backdrop-filter: blur(10px);         /* ← AJOUTE */
-  padding: 20px 0 20px;      /* ← REMPLACE (plus petit) */
-  border-bottom: none;       /* ← AJOUTE */
+/* Tous les titres en Georgia */
+h1, h2, h3, h4, h5, h6,
+.display-1, .h3, .lead {
+  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
+/* ========== HEADER ========== */
+header {
+  background: rgba(163, 158, 158, 0.652) !important;
+  backdrop-filter: blur(10px);
+  padding: 10px 0 !important;
+  border-bottom: none;
+}
+
+.navbar-brand, .nav-link, .btn {
+  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #f1e9e9c1;
-  text-decoration: none;
+  color: #f1e9e9c1 !important;
 }
 
-nav ul {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-nav a {
-  color: #d0d3da; /* bleu discret Julie */
-  text-decoration: none;
+.nav-link {
+  color: #d0d3da !important;
   font-size: 16px;
-  font-weight: 400;
 }
 
-nav a:hover {
+.nav-link:hover {
+  color: #fff !important;
   text-decoration: underline;
 }
 
-/* Hero naturel */
+/* ========== HERO ========== */
 .hero {
+  min-height: 100vh;
   padding: 120px 0 160px;
-  text-align: center;
+  background: transparent;
 }
 
 .hero h1 {
@@ -74,43 +63,23 @@ nav a:hover {
   font-weight: 300;
   margin-bottom: 16px;
   line-height: 1.1;
+  color: #1a1a1a;
 }
 
 .hero p {
   font-size: 20px;
   color: #e9d6d6;
-  margin-bottom: 48px;
   font-style: italic;
 }
 
-/* Liens subtils */
-.link-btn {
-  display: inline-block;
-  color: #eeebeb;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 400;
-  padding: 12px 24px;
-  border: 3px solid #171717;
-  border-radius: 32px;
-  margin: 0 12px;
-  transition: all 0.2s;
-}
-
-.link-btn:hover {
-  background: #d5dae1;
-  color: rgb(17, 17, 17);
-}
-
-/* Sections naturelles */
+/* ========== SECTIONS ========== */
 .content {
-  background: rgba(255, 255, 255, 0.099);  /* fond blanc subtil */
-  margin: 40px auto;                      /* espacement naturel */
-  padding: 60px 40px;                     /* généreux dedans */
-  border-radius: 12px;                    /* coins doux */
-  backdrop-filter: blur(10px);            /* Julie vibe */
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08); /* profondeur discrète */
-  max-width: 900px;   
+  background: rgba(255, 255, 255, 0.099);
+  margin: 40px auto;
+  padding: 60px 0;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
 }
 
 .content h2 {
@@ -120,29 +89,33 @@ nav a:hover {
   text-align: center;
 }
 
+/* ========== BIO ========== */
+.bio-text h2 {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.bio-photo img {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ========== MUSIQUE ========== */
 .music-item {
-  display: flex;
-  gap: 48px;
-  align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .music-item img {
-  width: 200px;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  width: 100%;
 }
 
 .music-meta h3 {
   font-size: 28px;
   font-weight: 400;
   margin-bottom: 24px;
-}
-
-.music-links {
-  display: flex;
-  gap: 24px;
 }
 
 .music-links a {
@@ -155,50 +128,39 @@ nav a:hover {
   text-decoration: underline;
 }
 
- .bio-container {
-  display: flex;
-  gap: 60px;
-  align-items: center;
+/* ========== CONCERTS ========== */
+.concert-item {
+  background: rgba(255,255,255,0.6) !important;
+  border-radius: 20px;
+  transition: all 0.3s;
 }
 
-.bio-text {
-  flex: 1;
+.concert-item:hover {
+  background: rgba(255,255,255,0.8) !important;
+  transform: translateX(12px);
 }
 
-.bio-photo {
-  flex-shrink: 0;
-  width: 280px;
+.concert-date {
+  color: #1e4a8c !important;
+  margin-bottom: 12px;
+  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
-.bio-photo img {
-  width: 100%;
-  height: 280px;
+.concert-photo img {
+  height: 250px;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
-/* MOBILE FIRST - photo EN HAUT */
-@media (max-width: 768px) {
-  .bio-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 32px;
-  }
-  
-  .bio-photo {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
+.card-title, .card-text {
+  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
-
-
-
+/* ========== NEWSLETTER ========== */
 .newsletter {
-  text-align: center;
-  max-width: 600px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .newsletter h2 {
@@ -212,56 +174,15 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-.newsletter-form {
-  display: flex;
-  max-width: 400px;
-  margin: 0 auto;
-  gap: 12px;
+.form-control, .btn {
+  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
-.newsletter-form input {
-  flex: 1;
-  padding: 16px 20px;
-  border: 1px solid #e5e3dd;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: inherit;
-}
-
-.newsletter-form button {
-  padding: 16px 32px;
-  background: #313233;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.newsletter-form button:hover {
-  background: #163a6b;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .newsletter-form {
-    flex-direction: column;
-  }
-}
-
-/* Mobile naturel */
-@media (max-width: 768px) {
-  body { padding: 0 16px; font-size: 16px; }
-  .hero h1 { font-size: 48px; }
-  .music-item { flex-direction: column; text-align: center; gap: 24px; }
-}
-
-/* Zone contacts */
-.contacts {
-  margin: 24px 0;
-  text-align: center;
+/* ========== FOOTER ========== */
+footer {
+  background: rgba(255, 255, 255, 0.099);
+  backdrop-filter: blur(10px);
+  margin-top: 40px;
 }
 
 .contacts p {
@@ -270,11 +191,8 @@ nav a:hover {
   margin: 8px 0;
 }
 
-/* Logos réseaux sociaux */
 .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
+  margin-top: 24px;
 }
 
 .social-link {
@@ -303,153 +221,11 @@ nav a:hover {
 .social-link:hover .social-logo {
   transform: rotate(10deg);
 }
-**Parfait !** **Concerts avec photo** (à droite desktop, haut mobile). Modif **incrémentale** :
 
-## **1. HTML** - **Remplace ta section `#concerts`** :
-
-```html
-<!-- Concerts avec PHOTO -->
-<section id="concerts" class="content concerts">
-  <h2>concerts</h2>
-  <div class="concerts-list">
-    <div class="concert-item">
-      <div class="concert-content">
-        <div class="concert-date">20 fév 2026</div>
-        <div class="concert-info">
-          <h3>Le Rocher de Palmer</h3>
-          <p>Bordeaux • 21h • avec Groupe X</p>
-          <a href="#" class="concert-link">billetterie</a>
-        </div>
-      </div>
-      <div class="concert-photo">
-        <img src="concert1.jpg" alt="Le Rocher de Palmer">
-      </div>
-    </div>
-    
-    <div class="concert-item">
-      <div class="concert-content">
-        <div class="concert-date">15 mars 2026</div>
-        <div class="concert-info">
-          <h3>La Bus Paloma</h3>
-          <p>Bordeaux • 20h30 • solo mandoline</p>
-          <a href="#" class="concert-link">infos</a>
-        </div>
-      </div>
-      <div class="concert-photo">
-        <img src="concert2.jpg" alt="La Bus Paloma">
-      </div>
-    </div>
-  </div>
-</section>
-```
-
-## **2. CSS** - **Remplace la section `.concerts`** :
-
-```css
-.concerts {
-  text-align: center;
-}
-
-.concerts h2 {
-  font-size: 36px;
-  margin-bottom: 48px;
-}
-
-.concerts-list {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.concert-item {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  margin-bottom: 64px;
-  padding: 40px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 20px;
-  transition: all 0.3s;
-}
-
-.concert-item:hover {
-  background: rgba(255,255,255,0.8);
-  transform: translateX(12px);
-}
-
-.concert-content {
-  flex: 1;
-}
-
-.concert-date {
-  font-size: 32px;
-  font-weight: bold;
-  color: #1e4a8c;
-  margin-bottom: 12px;
-}
-
-.concert-info h3 {
-  font-size: 28px;
-  margin-bottom: 8px;
-  color: #1a1a1a;
-}
-
-.concert-info p {
-  color: #666;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.concert-link {
-  color: #1e4a8c;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 12px 24px;
-  border: 1px solid #1e4a8c;
-  border-radius: 28px;
-  font-size: 16px;
-  transition: all 0.2s;
-}
-
-.concert-link:hover {
-  background: #1e4a8c;
-  color: white;
-}
-
-.concert-photo {
-  flex-shrink: 0;
-  width: 240px;
-}
-
-.concert-photo img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-/* MOBILE - photo EN HAUT */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .concert-item {
-    flex-direction: column;
-    gap: 32px;
-    text-align: center;
-  }
-  
-  .concert-photo {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .concert-photo img {
-    height: 220px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .social-icons { gap: 16px; }
-  .social-link { width: 40px; height: 40px; }
-  .social-logo { width: 20px; height: 20px; }
+  .hero h1 { font-size: 48px; }
+  .bio-text h2 { text-align: center; }
+  .concert-item:hover { transform: none; }
+  .concert-photo img { border-radius: 0 0 20px 20px !important; }
 }
