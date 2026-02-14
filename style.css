@@ -1,115 +1,84 @@
-/* ========== POLICE (écrase Bootstrap) ========== */
-:root {
-  --bs-font-sans-serif: Georgia, 'Times New Roman', serif;
-  --bs-body-font-family: Georgia, 'Times New Roman', serif;
+/* ========== POLICE GEORGIA ========== */
+body, .title, .subtitle, .button, .input {
+  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
+/* ========== FOND & BASE ========== */
 body {
-  font-family: Georgia, 'Times New Roman', serif !important;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #404040f5;
   background-image: url('img/jef-1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-color: #faf9f6;
-}
-
-/* Tous les titres en Georgia */
-h1, h2, h3, h4, h5, h6,
-.display-1, .h3, .lead {
-  font-family: Georgia, 'Times New Roman', serif !important;
+  color: #404040f5;
 }
 
 /* ========== HEADER ========== */
-header {
+.navbar {
   background: rgba(163, 158, 158, 0.652) !important;
   backdrop-filter: blur(10px);
-  padding: 10px 0 !important;
-  border-bottom: none;
 }
 
-.navbar-brand, .nav-link, .btn {
-  font-family: Georgia, 'Times New Roman', serif !important;
+.navbar-item {
+  color: #d0d3da !important;
 }
 
-.logo {
+.navbar-item.logo {
+  color: #f1e9e9c1 !important;
   font-size: 24px;
   font-weight: bold;
-  color: #f1e9e9c1 !important;
 }
 
-.nav-link {
-  color: #d0d3da !important;
-  font-size: 16px;
-}
-
-.nav-link:hover {
-  color: #fff !important;
-  text-decoration: underline;
+.navbar-burger span {
+  background-color: #d0d3da;
 }
 
 /* ========== HERO ========== */
 .hero {
-  min-height: 100vh;
-  padding: 120px 0 160px;
-  background: transparent;
+  background: transparent !important;
+  padding-top: 80px;
 }
 
-.hero h1 {
+.hero .title {
   font-size: 64px;
   font-weight: 300;
-  margin-bottom: 16px;
-  line-height: 1.1;
   color: #1a1a1a;
 }
 
-.hero p {
-  font-size: 20px;
+.hero .subtitle {
   color: #e9d6d6;
   font-style: italic;
 }
 
-/* ========== SECTIONS ========== */
-.content {
+/* ========== SECTIONS CONTENT ========== */
+.content-section {
   background: rgba(255, 255, 255, 0.099);
-  margin: 40px auto;
-  padding: 60px 0;
-  border-radius: 12px;
   backdrop-filter: blur(10px);
+  border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  margin: 40px auto;
+  max-width: 1000px;
 }
 
-.content h2 {
-  font-size: 36px;
-  font-weight: 300;
-  margin-bottom: 48px;
-  text-align: center;
+.section {
+  padding: 60px 20px;
 }
 
 /* ========== BIO ========== */
-.bio-text h2 {
-  text-align: left;
-  margin-bottom: 24px;
+.bio-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
 .bio-photo img {
-  height: 400px;
-  object-fit: cover;
-  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 
 /* ========== MUSIQUE ========== */
 .music-item {
   margin-bottom: 40px;
-}
-
-.music-item img {
-  height: 300px;
-  object-fit: cover;
-  width: 100%;
 }
 
 .music-meta h3 {
@@ -121,7 +90,7 @@ header {
 .music-links a {
   color: #dde1e8;
   text-decoration: none;
-  font-size: 16px;
+  margin-right: 24px;
 }
 
 .music-links a:hover {
@@ -133,6 +102,7 @@ header {
   background: rgba(255,255,255,0.6) !important;
   border-radius: 20px;
   transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .concert-item:hover {
@@ -143,56 +113,32 @@ header {
 .concert-date {
   color: #1e4a8c !important;
   margin-bottom: 12px;
-  font-family: Georgia, 'Times New Roman', serif !important;
-}
-
-.concert-photo img {
-  height: 250px;
-  object-fit: cover;
-  width: 100%;
-}
-
-.card-title, .card-text {
-  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
 /* ========== NEWSLETTER ========== */
 .newsletter {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.newsletter h2 {
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-
-.newsletter p {
-  font-size: 18px;
+.newsletter .subtitle {
   color: #151515cf;
-  margin-bottom: 40px;
-}
-
-.form-control, .btn {
-  font-family: Georgia, 'Times New Roman', serif !important;
 }
 
 /* ========== FOOTER ========== */
-footer {
-  background: rgba(255, 255, 255, 0.099);
-  backdrop-filter: blur(10px);
+.footer {
+  background: rgba(255, 255, 255, 0.099) !important;
   margin-top: 40px;
+  padding: 40px 20px;
 }
 
 .contacts p {
-  font-size: 16px;
   color: #1a1a1a;
   margin: 8px 0;
 }
 
+/* ========== SOCIAL ICONS ========== */
 .social-icons {
-  margin-top: 24px;
+  gap: 24px;
 }
 
 .social-link {
@@ -202,7 +148,6 @@ footer {
   width: 48px;
   height: 48px;
   color: #1e4a8c;
-  text-decoration: none;
   transition: all 0.2s;
 }
 
@@ -210,7 +155,6 @@ footer {
   width: 24px;
   height: 24px;
   fill: currentColor;
-  transition: all 0.2s;
 }
 
 .social-link:hover {
@@ -218,14 +162,22 @@ footer {
   transform: scale(1.1);
 }
 
-.social-link:hover .social-logo {
-  transform: rotate(10deg);
-}
-
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 48px; }
-  .bio-text h2 { text-align: center; }
-  .concert-item:hover { transform: none; }
-  .concert-photo img { border-radius: 0 0 20px 20px !important; }
+  .hero .title {
+    font-size: 48px;
+  }
+  
+  .concert-item:hover {
+    transform: none;
+  }
+  
+  .columns.is-vcentered {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bio-text {
+    text-align: center;
+  }
 }

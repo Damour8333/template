@@ -151,3 +151,4 @@ git push -u origin tailwind
 | Ajouter de l'interactivité | **Alpine.js** ou **React** |
 
 Quelle technologie vous tente ?
+https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app

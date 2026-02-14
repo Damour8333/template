@@ -4,147 +4,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jef le cri</title>
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bulma CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <!-- Votre CSS personnalisé -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
-  <header class="navbar navbar-expand-lg fixed-top">
+  <header class="navbar is-fixed-top">
     <div class="container">
-      <a href="#" class="navbar-brand logo">Jef le Cri</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a href="#musique" class="nav-link">musique</a></li>
-          <li class="nav-item"><a href="#concerts" class="nav-link">concerts</a></li>
-          <li class="nav-item"><a href="#bio" class="nav-link">bio</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">contact</a></li>
-        </ul>
+      <div class="navbar-brand">
+        <a href="#" class="navbar-item logo">Jef le Cri</a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="#musique" class="navbar-item">musique</a>
+          <a href="#concerts" class="navbar-item">concerts</a>
+          <a href="#bio" class="navbar-item">bio</a>
+          <a href="#contact" class="navbar-item">contact</a>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <main>
-    <section class="hero d-flex align-items-center justify-content-center text-center">
-      <div class="container">
-        <h1 class="display-1">Jef le cri</h1>
-        <p class="lead">musicien • accompagnement • production</p>
-        <div class="hero-links mt-4">
-          <a href="#musique" class="btn btn-outline-light btn-lg rounded-pill me-2">écouter</a>
-          <a href="#concerts" class="btn btn-outline-light btn-lg rounded-pill">concerts</a>
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">Jef le cri</h1>
+        <p class="subtitle is-4">musicien • accompagnement • production</p>
+        <div class="buttons is-centered mt-5">
+          <a href="#musique" class="button is-light is-outlined is-rounded is-medium">écouter</a>
+          <a href="#concerts" class="button is-light is-outlined is-rounded is-medium">concerts</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Bio -->
-    <section id="bio" class="content bio py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 bio-text">
-            <h2>ça commence comme ça</h2>
-            <p>Musicien basé à Bordeaux. 20 ans d'expérience scène & studio. Accompagnement technique et artistique pour groupes indépendants.</p>
-            <p>Spécialiste mandoline, production rythmique, création de sites pour musiciens.</p>
-          </div>
-          <div class="col-lg-5 bio-photo">
-            <img src="img/jef-3.jpg" alt="TON NOM" class="img-fluid rounded-3 shadow">
+  <!-- Bio -->
+  <section id="bio" class="section content-section">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-7 bio-text">
+          <h2 class="title is-2">ça commence comme ça</h2>
+          <p>Musicien basé à Bordeaux. 20 ans d'expérience scène & studio. Accompagnement technique et artistique pour groupes indépendants.</p>
+          <p>Spécialiste mandoline, production rythmique, création de sites pour musiciens.</p>
+        </div>
+        <div class="column is-5 bio-photo">
+          <figure class="image is-4by5">
+            <img src="img/jef-3.jpg" alt="TON NOM" class="is-rounded has-shadow">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Musique -->
+  <section id="musique" class="section content-section">
+    <div class="container">
+      <h2 class="title is-2 has-text-centered mb-6">Derniers projets</h2>
+      <div class="columns is-vcentered music-item">
+        <div class="column is-4">
+          <figure class="image is-square">
+            <img src="img/jef-2.jpg" alt="projet" class="has-radius">
+          </figure>
+        </div>
+        <div class="column is-8 music-meta">
+          <h3 class="title is-3">De Monparnasse a l'opéra</h3>
+          <div class="music-links field is-grouped">
+            <p class="control"><a href="spotify" class="has-text-light">sound cloud</a></p>
+            <p class="control"><a href="youtube" class="has-text-light">youtube</a></p>
+            <p class="control"><a href="bandcamp" class="has-text-light">bandcamp</a></p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Musique -->
-    <section id="musique" class="content py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">Derniers projets</h2>
-        <div class="row align-items-center music-item">
-          <div class="col-md-4">
-            <img src="img/jef-2.jpg" alt="projet" class="img-fluid rounded-3 shadow">
-          </div>
-          <div class="col-md-8 music-meta">
-            <h3>De Monparnasse a l'opéra</h3>
-            <div class="music-links d-flex gap-3 mt-3">
-              <a href="spotify" class="text-decoration-none">sound cloud</a>
-              <a href="youtube" class="text-decoration-none">youtube</a>
-              <a href="bandcamp" class="text-decoration-none">bandcamp</a>
+  <!-- Concerts -->
+  <section id="concerts" class="section content-section">
+    <div class="container">
+      <h2 class="title is-2 has-text-centered mb-6">concerts</h2>
+      
+      <!-- Concert 1 -->
+       <!-- Concerts -->
+  <section id="concerts" class="section content-section">
+    <div class="container">
+      <h2 class="title is-2 has-text-centered mb-6">concerts</h2>
+      
+      <!-- Concert 1 -->
+      <div class="card concert-item mb-5">
+        <div class="card-content">
+          <div class="columns is-vcentered">
+            <div class="column is-8">
+              <div class="concert-date title is-3 has-text-primary">20 fév 2026</div>
+              <h3 class="title is-4">Le Rocher de Palmer</h3>
+              <p class="subtitle is-6 has-text-grey">Bordeaux • 21h • avec Groupe X</p>
+              <a href="#" class="button is-outlined is-primary is-rounded">billetterie</a>
+            </div>
+            <div class="column is-4 concert-photo-wrapper">
+              <img src="img/jef-5.jpg" alt="Le Rocher de Palmer" class="concert-img">
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Concerts -->
-    <section id="concerts" class="content concerts py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">concerts</h2>
-        <div class="concerts-list">
-          <!-- Concert 1 -->
-          <div class="card concert-item mb-4 border-0 shadow-sm">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-8">
-                <div class="card-body concert-content">
-                  <div class="concert-date h3 text-primary fw-bold">20 fév 2026</div>
-                  <h3 class="card-title">Le Rocher de Palmer</h3>
-                  <p class="card-text text-muted">Bordeaux • 21h • avec Groupe X</p>
-                  <a href="#" class="btn btn-outline-primary rounded-pill">billetterie</a>
-                </div>
-              </div>
-              <div class="col-md-4 concert-photo">
-                <img src="img/jef-5.jpg" alt="Le Rocher de Palmer" class="img-fluid rounded-end">
-              </div>
+      <!-- Concert 2 -->
+      <div class="card concert-item mb-5">
+        <div class="card-content">
+          <div class="columns is-vcentered">
+            <div class="column is-8">
+              <div class="concert-date title is-3 has-text-primary">15 mars 2026</div>
+              <h3 class="title is-4">La Bus Paloma</h3>
+              <p class="subtitle is-6 has-text-grey">Bordeaux • 20h30 • solo mandoline</p>
+              <a href="#" class="button is-outlined is-primary is-rounded">infos</a>
             </div>
-          </div>
-
-          <!-- Concert 2 -->
-          <div class="card concert-item mb-4 border-0 shadow-sm">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-8">
-                <div class="card-body concert-content">
-                  <div class="concert-date h3 text-primary fw-bold">15 mars 2026</div>
-                  <h3 class="card-title">La Bus Paloma</h3>
-                  <p class="card-text text-muted">Bordeaux • 20h30 • solo mandoline</p>
-                  <a href="#" class="btn btn-outline-primary rounded-pill">infos</a>
-                </div>
-              </div>
-              <div class="col-md-4 concert-photo">
-                <img src="img/jef-3.jpg" alt="La Bus Paloma" class="img-fluid rounded-end">
-              </div>
+            <div class="column is-4 concert-photo-wrapper">
+              <img src="img/jef-3.jpg" alt="La Bus Paloma" class="concert-img">
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter content py-5 text-center">
-      <div class="container">
-        <h2>nouvelles</h2>
-        <p class="mb-4">Reçois mes actualités, dates de concert et nouveaux projets.</p>
-        <form class="newsletter-form row justify-content-center">
-          <div class="col-md-6">
-            <div class="input-group">
-              <input type="email" class="form-control" placeholder="ton@email.com" required>
-              <button type="submit" class="btn btn-dark">s'inscrire</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
+      
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section content-section newsletter">
+    <div class="container has-text-centered">
+      <h2 class="title is-2">nouvelles</h2>
+      <p class="subtitle is-5 mb-5">Reçois mes actualités, dates de concert et nouveaux projets.</p>
+      <form class="field has-addons has-addons-centered">
+        <div class="control is-expanded">
+          <input class="input is-medium" type="email" placeholder="ton@email.com" required>
+        </div>
+        <div class="control">
+          <button type="submit" class="button is-dark is-medium">s'inscrire</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="py-5 text-center">
-    <div class="container">
-      <p>jef le cri &copy; 2026</p>
-      <div class="contacts my-3">
+  <footer class="footer content-section">
+    <div class="container has-text-centered">
+      <p class="mb-3">jef le cri &copy; 2026</p>
+      <div class="contacts mb-4">
         <p>contact@tonnom.com</p>
         <p>+33 6 XX XX XX XX</p>
       </div>
-      <div class="social-icons d-flex justify-content-center gap-3">
+      <div class="social-icons is-flex is-justify-content-center is-gap-3">
         <a href="https://instagram.com/tonpseudo" class="social-link" aria-label="Instagram" target="_blank">
           <svg class="social-logo" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
@@ -158,7 +175,21 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script pour le menu mobile Bulma -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
