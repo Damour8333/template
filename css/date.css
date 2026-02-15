@@ -1,0 +1,32 @@
+
+/* ========== CONCERTS ========== */
+.concert-item {
+  background: rgba(255,255,255,0.6) !important; /* ← FOND CARTE CONCERT : blanc transparent */
+  border-radius: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.concert-item:hover {
+  background: rgba(255,255,255,0.8) !important; /* ← SURVOL CARTE : blanc plus opaque */
+  transform: translateX(12px);
+}
+
+.concert-date {
+  color: #1b1b1d !important; /* ← COULEUR DATE CONCERT : bleu (était gris clair #cbd1d9) */
+  margin-bottom: 12px;
+}
+
+.concert-photo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concert-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,38 @@
+/* ========== FOOTER ========== */
+.footer {
+  background: rgba(255, 255, 255, 0.099) !important; /* ← FOND FOOTER : blanc très transparent */
+  margin-top: 40px;
+  margin-bottom: 0 !important;
+  padding: 40px 20px;
+}
+
+.contacts p {
+  color: #0d0101; /* ← COULEUR CONTACTS : noir */
+  margin: 8px 0;
+}
+
+/* ========== SOCIAL ICONS ========== */
+.social-icons {
+  gap: 24px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: #000000; /* ← COULEUR ICÔNES SOCIAUX : bleu */
+  transition: all 0.2s;
+}
+
+.social-logo {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.social-link:hover {
+  color: #1a1a1a; /* ← COULEUR SURVOL ICÔNES : noir */
+  transform: scale(1.1);
+}

@@ -1,0 +1,39 @@
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero .title {
+    font-size: 48px;
+  }
+  
+  .player-card {
+    padding: 25px;
+  }
+  
+  .album-art img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .concert-item:hover {
+    transform: none;
+  }
+  
+  .columns.is-vcentered {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .concert-photo-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .concert-img {
+    height: 220px;
+    max-width: 300px;
+  }
+  
+  .bio-text {
+    text-align: center;
+  }
+}

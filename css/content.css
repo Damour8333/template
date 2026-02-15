@@ -1,0 +1,14 @@
+
+/* ========== SECTIONS CONTENT ========== */
+.content-section {
+  background: rgba(244, 238, 238, 0.099); /* ← FOND SECTIONS : blanc très transparent */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.section {
+  padding: 60px 20px;
+}

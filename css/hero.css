@@ -1,0 +1,16 @@
+/* ========== HERO ========== */
+.hero {
+  background: transparent !important;
+  padding-top: 80px;
+}
+
+.hero .title {
+  font-size: 64px;
+  font-weight: 300;
+  color: #f4ebeb; /* ← COULEUR TITRE PRINCIPAL : noir */
+}
+
+.hero .subtitle {
+  color: #e9d6d6; /* ← COULEUR SOUS-TITRE : rose/beige clair */
+  font-style: italic;
+}

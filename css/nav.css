@@ -1,0 +1,19 @@
+/* ========== HEADER ========== */
+.navbar {
+  background: rgba(243, 235, 235, 0) !important; /* ← FOND HEADER : gris translucide */
+  backdrop-filter: blur(10px);
+}
+
+.navbar-item {
+  color: #383a3c !important; /* ← COULEUR LIENS MENU : gris clair */
+}
+
+.navbar-item.logo {
+  color: #f1e9e9c1 !important; /* ← COULEUR LOGO : blanc cassé */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-burger span {
+  background-color: #76797e; /* ← COULEUR ICÔNE MENU BURGER : gris clair */
+}

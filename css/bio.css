@@ -1,0 +1,10 @@
+/* ========== BIO ========== */
+.bio-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.bio-photo img {
+  box-shadow: 0 8px 32px rgba(241, 233, 233, 0.1);
+}
