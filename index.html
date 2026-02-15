@@ -71,12 +71,10 @@
     <div class="container">
       <h2 class="title is-2 has-text-centered mb-6">Derniers projets</h2>
       
-      <!-- LECTEUR AMPLITUDEJS -->
       <div class="columns is-centered">
         <div class="column is-8">
           <div id="amplitude-player" class="player-card">
             
-            <!-- Pochette et infos -->
             <div class="player-main">
               <div class="album-art">
                 <img data-amplitude-song-info="cover_art_url"/>
@@ -87,7 +85,6 @@
               </div>
             </div>
 
-            <!-- Contrôles -->
             <div class="player-controls">
               <div class="amplitude-prev" id="previous">
                 <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
@@ -101,7 +98,6 @@
               </div>
             </div>
 
-            <!-- Progress bar -->
             <div class="progress-container">
               <input type="range" class="amplitude-song-slider" step=".1"/>
               <div class="time-container">
@@ -114,12 +110,9 @@
               </div>
             </div>
 
-            <!-- Playlist dynamique -->
             <div class="playlist">
               <div class="amplitude-playlist-container">
-                <div class="amplitude-playlist" id="playlist-container">
-                  <!-- Les chansons seront générées automatiquement -->
-                </div>
+                <div class="amplitude-playlist" id="playlist-container"></div>
               </div>
             </div>
 
@@ -168,17 +161,15 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER FAUX FORMULAIRE (TEST) -->
+  <!-- NEWSLETTER -->
   <section class="section content-section newsletter">
     <div class="container has-text-centered">
       <h2 class="title is-2">nouvelles</h2>
       <p class="subtitle is-5 mb-5">Reçois mes actualités, dates de concert et nouveaux projets.</p>
       
-      <!-- FAUX FORMULAIRE : pas d'envoi réel, juste pour tester -->
       <form 
-        onsubmit="event.preventDefault(); showNewsletterSuccess();" 
-        class="field has-addons has-addons-centered newsletter-form"
         id="newsletter-form"
+        class="field has-addons has-addons-centered newsletter-form"
       >
         <div class="control is-expanded">
           <input 
@@ -194,9 +185,12 @@
         </div>
       </form>
       
-      <!-- Message de confirmation (caché par défaut) -->
       <div id="newsletter-success" class="notification is-success is-light mt-4">
         ✅ Merci ! Vous êtes inscrit à la newsletter.
+      </div>
+      
+      <div id="newsletter-error" class="notification is-danger is-light mt-4">
+        ⚠️ Erreur. Vérifiez votre email.
       </div>
     </div>
   </section>
@@ -223,97 +217,9 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-  // Vos chansons
-  const songs = [
-    {
-      name: "Notre amitié",
-      artist: "Jef le Cri",
-      url: "music/song-1.mp3",
-      cover_art_url: "img/jef-2.jpg"
-    },
-    {
-      name: "petit chat",
-      artist: "Benoit Lescouzeres",
-      url: "music/song-2.mp3",
-      cover_art_url: "img/jef-2.jpg"
-    },
-    {
-      name: "les pyrénées",
-      artist: "Jef le Cri",
-      url: "music/song-3.mp3",
-      cover_art_url: "img/jef-3.jpg"
-    }
-  ];
-
-  // Générer la playlist HTML
-  const container = document.getElementById('playlist-container');
-  let html = '';
-  
-  songs.forEach((song, index) => {
-    html += `
-      <div class="playlist-item amplitude-song-container" amplitude-song-index="${index}">
-        <div class="playlist-number">${String(index + 1).padStart(2, '0')}</div>
-        <div class="playlist-info">
-          <div class="playlist-title">${song.name}</div>
-          <div class="playlist-artist">${song.artist}</div>
-        </div>
-        <div class="playlist-duration">3:45</div>
-      </div>
-    `;
-  });
-  
-  container.innerHTML = html;
-
-  // Initialiser Amplitude
-  Amplitude.init({
-    songs: songs,
-    callbacks: {
-      play: function() {
-        document.getElementById('play-pause').classList.add('amplitude-playing');
-      },
-      pause: function() {
-        document.getElementById('play-pause').classList.remove('amplitude-playing');
-      }
-    }
-  });
-
-  // FONCTION FAUX FORMULAIRE NEWSLETTER
-  function showNewsletterSuccess() {
-    const email = document.getElementById('newsletter-email').value;
-    console.log('Test newsletter : ' + email); // Affiche dans la console
-    
-    // Cacher le formulaire
-    document.getElementById('newsletter-form').style.display = 'none';
-    
-    // Afficher le message de succès
-    document.getElementById('newsletter-success').style.display = 'block';
-    
-    // Optionnel : réafficher après 3 secondes pour tester encore
-    setTimeout(function() {
-      document.getElementById('newsletter-form').style.display = 'flex';
-      document.getElementById('newsletter-success').style.display = 'none';
-      document.getElementById('newsletter-email').value = '';
-    }, 3000);
-  }
-  </script>
-
-  <!-- Menu mobile Bulma -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-      if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach(el => {
-          el.addEventListener('click', () => {
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-          });
-        });
-      }
-    });  
-  </script>
+  <!-- Scripts JS séparés -->
+  <script src="js/player.js"></script>
+  <script src="js/newsletter.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
