@@ -162,38 +162,103 @@
   </section>
 
   <!-- NEWSLETTER -->
-  <section class="section content-section newsletter">
-    <div class="container has-text-centered">
-      <h2 class="title is-2">nouvelles</h2>
-      <p class="subtitle is-5 mb-5">Reçois mes actualités, dates de concert et nouveaux projets.</p>
+ <!-- NEWSLETTER -->
+<section class="section content-section newsletter">
+  <div class="container has-text-centered">
+    <h2 class="title is-2">nouvelles</h2>
+    <p class="subtitle is-5 mb-5">Reçois mes actualités, dates de concert et nouveaux projets.</p>
+
+       <!-- ⚠️ MESSAGES À PLACER ICI - AVANT LE FORMULAIRE ⚠️ -->
       
-      <form 
-        id="newsletter-form"
-        class="field has-addons has-addons-centered newsletter-form"
-      >
-        <div class="control is-expanded">
-          <input 
-            class="input is-medium" 
-            type="email" 
-            id="newsletter-email"
-            placeholder="ton@email.com" 
-            required
-          >
+      <!-- Message d'erreur -->
+      <div id="error-message" class="notification is-danger is-light" style="display: none;">
+        ⚠️ Nous n'avons pas pu confirmer votre inscription.
+      </div>
+      
+      <!-- Message de succès -->
+      <div id="success-message" class="notification is-success is-light" style="display: none;">
+        ✅ Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.
+      </div>
+    
+    <!-- Formulaire Brevo stylisé avec Bulma -->
+    <div id="sib-form-container" class="sib-form-container" style="max-width: 540px; margin: 0 auto;">
+      
+      <!-- Message d'erreur (caché par défaut) -->
+      <div id="error-message" class="notification is-danger is-light" style="display: none;">
+        ⚠️ Nous n'avons pas pu confirmer votre inscription.
+      </div>
+      
+      <!-- Message de succès (caché par défaut) -->
+      <div id="success-message" class="notification is-success is-light" style="display: none;">
+        ✅ Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.
+      </div>
+      
+      <!-- Formulaire stylisé -->
+      <form id="sib-form" method="POST" action="https://99b18cc2.sibforms.com/serve/MUIFANx-I7JnVuE4Fc_BVbvYKDQ-21rkxvaacMSMGqRg-iVMM0bVK-2q5sLpqEAjrfNmZjyw2LhPu9iQe26d8rlF68_ml3Gcr2vjQE1FV_HrvTqT_TAPuFM0kATRNgm8eF94Bpk0QrQSbBW6nibmO9UbLgsmwuoJVkWIvQCbrXW5LnxO6S-NbMy-0k8MuSnd0gY5nJ714kQLrfIv4w==" data-type="subscription">
+        
+        <!-- Champ email avec style Bulma -->
+        <div class="field">
+          <label class="label has-text-left" style="color: #3C4858; font-weight: 700;">
+            Veuillez renseigner votre adresse email pour vous inscrire <span class="has-text-danger">*</span>
+          </label>
+          <div class="control">
+            <input 
+              class="input is-medium" 
+              type="email" 
+              id="EMAIL" 
+              name="EMAIL" 
+              placeholder="ton@email.com" 
+              required
+              style="background-color: rgba(255,255,255,0.9);"
+            >
+          </div>
+          <p class="help has-text-left" style="color: #8390A4;">
+            Ex. : abc@xyz.com
+          </p>
         </div>
-        <div class="control">
-          <button type="submit" class="button is-dark is-medium">s'inscrire</button>
+
+        <!-- Case à cocher RGPD avec style Bulma -->
+        <div class="field">
+          <div class="control">
+            <label class="checkbox" style="font-size: 14px; text-align: left; display: block;">
+              <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required>
+              <span class="ml-2">J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.</span>
+              <span class="has-text-danger">*</span>
+            </label>
+          </div>
+          <p class="help has-text-left" style="color: #8390A4; margin-top: 5px;">
+            Vous pouvez vous désinscrire à tout moment en cliquant sur le lien présent dans nos emails.
+          </p>
         </div>
+
+        <!-- Bouton d'envoi stylisé -->
+        <div class="field is-grouped is-grouped-centered mt-5">
+          <div class="control">
+            <button 
+              type="submit" 
+              class="button is-dark is-medium" 
+              style="min-width: 200px; background-color: #3E4857;"
+              id="submit-button"
+            >
+              <span class="icon is-small mr-2" id="submit-icon" style="display: none;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                  <path d="M12 2v4M12 22v-4M4 12H2h2M22 12h-2 2M19.07 4.93l-2.83 2.83M6.9 17.1l-2.83 2.83M17.1 6.9l2.83-2.83M4.93 19.07l2.83-2.83" stroke="white" stroke-width="2" stroke-linecap="round">
+                    <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                  </path>
+                </svg>
+              </span>
+              <span id="submit-text">S'INSCRIRE</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Champs cachés requis par Brevo -->
+        <input type="text" name="email_address_check" value="" class="input--hidden" style="display: none;">
+        <input type="hidden" name="locale" value="fr">
       </form>
-      
-      <div id="newsletter-success" class="notification is-success is-light mt-4">
-        ✅ Merci ! Vous êtes inscrit à la newsletter.
-      </div>
-      
-      <div id="newsletter-error" class="notification is-danger is-light mt-4">
-        ⚠️ Erreur. Vérifiez votre email.
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="footer content-section">
@@ -219,7 +284,7 @@
 
   <!-- Scripts JS séparés -->
   <script src="js/player.js"></script>
-  <script src="js/newsletter.js"></script>
+  <script src="js/newsletter-brevo.js"></script>
   <script src="js/menu.js"></script>
 </body>
 </html>

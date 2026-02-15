@@ -306,7 +306,7 @@ body {
 }
 
 .concert-date {
-  color: #1e4a8c !important; /* ← COULEUR DATE CONCERT : bleu (était gris clair #cbd1d9) */
+  color: #1b1b1d !important; /* ← COULEUR DATE CONCERT : bleu (était gris clair #cbd1d9) */
   margin-bottom: 12px;
 }
 
@@ -330,7 +330,7 @@ body {
 }
 
 .newsletter .subtitle {
-  color: #151515cf; /* ← COULEUR TEXTE NEWSLETTER : noir transparent */
+  color: #0b0101f2; /* ← COULEUR TEXTE NEWSLETTER : noir transparent */
 }
 
 /* ========== FOOTER ========== */
@@ -342,7 +342,7 @@ body {
 }
 
 .contacts p {
-  color: #1a1a1a; /* ← COULEUR CONTACTS : noir */
+  color: #0d0101; /* ← COULEUR CONTACTS : noir */
   margin: 8px 0;
 }
 
@@ -357,7 +357,7 @@ body {
   justify-content: center;
   width: 48px;
   height: 48px;
-  color: #1e4a8c; /* ← COULEUR ICÔNES SOCIAUX : bleu */
+  color: #000000; /* ← COULEUR ICÔNES SOCIAUX : bleu */
   transition: all 0.2s;
 }
 
@@ -408,5 +408,55 @@ body {
   
   .bio-text {
     text-align: center;
+  }
+}
+
+/* ========== NEWSLETTER BREVO ========== */
+#sib-form-container {
+  background: rgba(243, 240, 240, 0);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+#sib-form .checkbox {
+  color: #0c0c0c69;
+  font-size: 14px;
+}
+
+#sib-form .help {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Animation pour le bouton */
+#submit-button {
+  transition: all 0.3s ease;
+}
+
+#submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Style pour les messages de notification */
+#success-message, #error-message {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
