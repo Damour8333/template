@@ -1,7 +1,7 @@
-// js/player.js - Lecteur AmplitudeJS
+// js/player.js - Lecteur AmplitudeJS unifié
 
-// Configuration des chansons
-const songs = [
+// Chansons par défaut (fallback)
+const defaultSongs = [
   {
     name: "Notre amitié",
     artist: "Jef le Cri",
@@ -22,8 +22,8 @@ const songs = [
   }
 ];
 
-// Générer la playlist HTML
-function generatePlaylist() {
+// Génère la playlist HTML et ajoute les clics
+function generatePlaylistHTML(songs) {
   const container = document.getElementById('playlist-container');
   let html = '';
   
@@ -41,14 +41,21 @@ function generatePlaylist() {
   });
   
   container.innerHTML = html;
+  
+  // 🔥 AJOUTE LES CLICS ICI - après avoir créé le HTML
+  document.querySelectorAll('.playlist-item').forEach((item, index) => {
+    item.addEventListener('click', function () {
+      Amplitude.playSongAtIndex(index);
+    });
+  });
 }
 
-// Initialiser le lecteur
+// Initialise avec les chansons par défaut
 function initPlayer() {
-  generatePlaylist();
+  generatePlaylistHTML(defaultSongs);
   
   Amplitude.init({
-    songs: songs,
+    songs: defaultSongs,
     callbacks: {
       play: function() {
         document.getElementById('play-pause').classList.add('amplitude-playing');
@@ -58,13 +65,59 @@ function initPlayer() {
       }
     }
   });
+  
+  // Puis essaie de charger depuis Sanity
+  loadPlaylistFromSanity();
+}
 
-  // 🔥 Ajout du comportement clic manuel
-  document.querySelectorAll('.playlist-item').forEach((item, index) => {
-    item.addEventListener('click', function () {
-      Amplitude.playSongAtIndex(index);
+// Charge depuis Sanity (async)
+async function loadPlaylistFromSanity() {
+  const query = `*[_type == "track"] | order(order asc) {
+    title,
+    artist,
+    "audioUrl": audioFile.asset->url,
+    "coverUrl": coverImage.asset->url
+  }`;
+  
+  try {
+    const response = await fetch(`https://m27cjm4v.api.sanity.io/v2023-05-03/data/query/production?query=${encodeURIComponent(query)}`);
+    const data = await response.json();
+    const tracks = data.result || [];
+    
+    if (tracks.length === 0) {
+      console.log('Pas de morceaux dans Sanity, on garde la playlist par défaut');
+      return;
+    }
+    
+    // Transforme pour AmplitudeJS
+    const songs = tracks.map(track => ({
+      name: track.title,
+      artist: track.artist || 'Jef le Cri',
+      url: track.audioUrl,
+      cover_art_url: track.coverUrl || 'img/jef-2.jpg'
+    }));
+    
+    // Réinitialise Amplitude avec les nouvelles chansons
+    Amplitude.init({
+      songs: songs,
+      callbacks: {
+        play: function() {
+          document.getElementById('play-pause').classList.add('amplitude-playing');
+        },
+        pause: function() {
+          document.getElementById('play-pause').classList.remove('amplitude-playing');
+        }
+      }
     });
-  });
+    
+    // Regénère la playlist avec les clics
+    generatePlaylistHTML(songs);
+    
+    console.log(`${songs.length} morceau(x) chargé(s) depuis Sanity`);
+  } catch (error) {
+    console.error('Erreur playlist Sanity:', error);
+    // Garde les chansons par défaut en cas d'erreur
+  }
 }
 
 // Démarrer quand le DOM est prêt
