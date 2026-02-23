@@ -58,6 +58,13 @@ function initPlayer() {
       }
     }
   });
+
+  // 🔥 Ajout du comportement clic manuel
+  document.querySelectorAll('.playlist-item').forEach((item, index) => {
+    item.addEventListener('click', function () {
+      Amplitude.playSongAtIndex(index);
+    });
+  });
 }
 
 // Démarrer quand le DOM est prêt
