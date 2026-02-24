@@ -1,3 +1,5 @@
+// schemas/concert.js
+
 export default {
   name: 'concert',
   type: 'document',
@@ -36,12 +38,41 @@ export default {
       name: 'image',
       type: 'image',
       title: 'Photo'
+    }
+  ],
+  
+  // Pour afficher la date dans la liste Sanity
+  preview: {
+    select: {
+      title: 'venue',
+      subtitle: 'date',
+      media: 'image'
+    },
+    prepare({ title, subtitle, media }) {
+      const date = new Date(subtitle).toLocaleDateString('fr-FR');
+      return {
+        title: title,
+        subtitle: date,
+        media: media
+      };
+    }
+  },
+  
+  // Tri par défaut : du plus proche au plus lointain
+  orderings: [
+    {
+      title: 'Date (prochains)',
+      name: 'dateAsc',
+      by: [
+        { field: 'date', direction: 'asc' }
+      ]
     },
     {
-      name: 'isPast',
-      type: 'boolean',
-      title: 'Concert passé ?',
-      initialValue: false
+      title: 'Date (passés)',
+      name: 'dateDesc',
+      by: [
+        { field: 'date', direction: 'desc' }
+      ]
     }
   ]
 }
