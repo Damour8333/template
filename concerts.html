@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tous les concerts - Jef le Cri</title>
+  
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <!-- CSS existants -->
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+  <!-- CSS spécifique page concerts -->
+  <link rel="stylesheet" href="css/concerts-page.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar is-fixed-top">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="index.html" class="navbar-item logo">Jef le Cri</a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="index.html#musique" class="navbar-item">musique</a>
+          <a href="concerts.html" class="navbar-item is-active">concerts</a>
+          <a href="index.html#bio" class="navbar-item">bio</a>
+          <a href="index.html#contact" class="navbar-item">contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="concerts-main">
+    <div class="container">
+      <h1 class="page-title">Tous les concerts</h1>
+      
+      <!-- Section À venir -->
+      <section id="concerts-a-venir" class="concerts-section">
+        <h2 class="section-title">Prochains concerts</h2>
+        <div class="concerts-list" id="liste-a-venir">
+          <!-- Rempli par JS -->
+        </div>
+      </section>
+
+      <!-- Section Passés -->
+      <section id="concerts-passes" class="concerts-section">
+        <h2 class="section-title">Concerts passés</h2>
+        <div class="concerts-list concerts-past" id="liste-passes">
+          <!-- Rempli par JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer content-section">
+    <div class="container has-text-centered">
+      <p class="mb-3">jef le cri &copy; 2026</p>
+      <div class="social-icons is-flex is-justify-content-center is-gap-3">
+        <a href="https://www.instagram.com/jef_le_cri/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg class="social-logo" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://soundcloud.com/semaflore" class="social-link" aria-label="SoundCloud" target="_blank" rel="noopener">
+          <svg class="social-logo" viewBox="0 0 24 24"><path d="M17.243 12.353c-.54-.73-1.39-1.255-2.38-1.255-.99 0-1.84.525-2.38 1.255l-8.302-4.666c-.2-.113-.423-.18-.653-.18-.905 0-1.637.732-1.637 1.637v9.448c0 .905.732 1.637 1.637 1.637.23 0 .452-.067.653-.18l8.302-4.666c.54.73 1.39 1.255 2.38 1.255.99 0 1.84-.525 2.38-1.255l2.998 1.685c.2.113.423.18.653.18.905 0 1.637-.732 1.637-1.637v-9.448c0-.905-.732-1.637-1.637-1.637-.23 0-.452.067-.653.18l-2.998 1.685z"/></svg>
+        </a>
+        <a href="mailto:lecrie@gmail.com" class="social-link" aria-label="Email">
+          <svg class="social-logo" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/sanity-client.js"></script>
+  <script src="js/concerts-page.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>
