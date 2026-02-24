@@ -1,10 +1,12 @@
+/* ========== RESPONSIVE GLOBAL - MOBILE FIRST ========== */
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+  /* Hero */
   .hero .title {
     font-size: 48px;
   }
   
+  /* Player */
   .player-card {
     padding: 25px;
   }
@@ -14,6 +16,7 @@
     height: 180px;
   }
   
+  /* Concerts */
   .concert-item:hover {
     transform: none;
   }
@@ -33,6 +36,7 @@
     max-width: 300px;
   }
   
+  /* Bio */
   .bio-text {
     text-align: center;
   }

@@ -1221,3 +1221,5 @@ function initPlayer() {
 
 // Démarrer quand le DOM est prêt
 document.addEventListener('DOMContentLoaded', initPlayer);
+
+git add ../concerts.html ../css/concerts-page.css ../js/concerts-page.js

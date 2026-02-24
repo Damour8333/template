@@ -9,7 +9,6 @@
   <!-- AmplitudeJS -->
   <script src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/amplitude.min.js"></script>
   <!-- Votre CSS -->
-
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/content.css">
@@ -18,17 +17,8 @@
   <link rel="stylesheet" href="css/mobilefirst.css">
   <link rel="stylesheet" href="css/newsletters.css">
   <link rel="stylesheet" href="css/bio.css">
-  
   <link rel="stylesheet" href="css/footer.css">
-
-  
-
   <link rel="stylesheet" href="style.css">
-  
-  
-  
-
-
 </head>
 <body>
   <!-- Header -->
@@ -45,7 +35,8 @@
       <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
           <a href="#musique" class="navbar-item">musique</a>
-          <a href="#concerts" class="navbar-item">concerts</a>
+          <a href="#concerts" class="navbar-item">concerts à venir</a>
+          <a href="concerts.html" class="navbar-item">tous les concerts</a>
           <a href="#bio" class="navbar-item">bio</a>
           <a href="#contact" class="navbar-item">contact</a>
         </div>
@@ -58,7 +49,7 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-1">Jef</h1>
-        <p class="subtitle is-4"> • chanteur réunionnais
+        <p class="subtitle is-4"> • chanteur réunionnais</p>
         <div class="buttons is-centered mt-5">
           <a href="#musique" class="button is-light is-outlined is-rounded is-medium">écouter</a>
           <a href="#concerts" class="button is-light is-outlined is-rounded is-medium">concerts</a>
@@ -78,32 +69,29 @@
         </div>
         <div class="column is-5 bio-photo">
           <figure class="image is-4by5">
-            <img src="img/jef-3.jpg" alt="TON NOM" class="is-rounded has-shadow">
+            <img src="img/jef-3.jpg" alt="Jef le Cri" class="is-rounded has-shadow">
           </figure>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MUSIQUE AVEC LECTEUR PRO -->
+  <!-- MUSIQUE -->
   <section id="musique" class="section content-section">
     <div class="container">
       <h2 class="title is-2 has-text-centered mb-6">Derniers projets</h2>
-      
       <div class="columns is-centered">
         <div class="column is-8">
           <div id="amplitude-player" class="player-card">
-            
             <div class="player-main">
               <div class="album-art">
-                <img data-amplitude-song-info="cover_art_url"/>
+                <img data-amplitude-song-info="cover_art_url" alt="Album cover"/>
               </div>
               <div class="song-info">
                 <span class="song-name" data-amplitude-song-info="name"></span>
                 <span class="song-artist" data-amplitude-song-info="artist"></span>
               </div>
             </div>
-
             <div class="player-controls">
               <div class="amplitude-prev" id="previous">
                 <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
@@ -116,7 +104,6 @@
                 <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
               </div>
             </div>
-
             <div class="progress-container">
               <input type="range" class="amplitude-song-slider" step=".1"/>
               <div class="time-container">
@@ -128,15 +115,13 @@
                 </span>
               </div>
             </div>
-
             <div class="playlist">
               <div class="amplitude-playlist-container">
                 <div class="amplitude-playlist" id="playlist-container"></div>
               </div>
             </div>
-
           </div>
-        </div>git
+        </div>
       </div>
     </div>
   </section>
@@ -144,7 +129,7 @@
   <!-- Concerts -->
   <section id="concerts" class="section content-section">
     <div class="container">
-      <h2 class="title is-2 has-text-centered mb-6">concerts</h2>
+      <h2 class="title is-2 has-text-centered mb-6">concerts à venir</h2>
       
       <div class="card concert-item mb-5">
         <div class="card-content">
@@ -156,7 +141,7 @@
               <a href="#" class="button is-outlined is-primary is-rounded">billetterie</a>
             </div>
             <div class="column is-4 concert-photo-wrapper">
-              <img src="img/jef-5.jpg" alt="Le Rocher de Palmer" class="concert-img">
+              <img src="img/jef-5.jpg" alt="Garage Moderne" class="concert-img">
             </div>
           </div>
         </div>
@@ -177,136 +162,117 @@
           </div>
         </div>
       </div>
+
+      <div class="has-text-centered mt-6">
+        <a href="concerts.html" class="button is-light is-outlined is-rounded is-medium">
+          voir tous les concerts
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
- <!-- NEWSLETTER -->
-<section id="contact" class="section content-section newsletter"> 
-  <div class="container has-text-centered">
-    <h2 class="title is-2">nouvelles</h2>
-    <p class="subtitle is-5 mb-5">Reçois mes actualités, dates de concert et nouveaux projets.</p>
+  <!-- Newsletter -->
+  <section id="contact" class="section content-section newsletter"> 
+    <div class="container has-text-centered">
+      <h2 class="title is-2">nouvelles</h2>
+      <p class="subtitle is-5 mb-5">Reçois mes actualités, dates de concert et nouveaux projets.</p>
 
-       <!-- ⚠️ MESSAGES À PLACER ICI - AVANT LE FORMULAIRE ⚠️ -->
-      
-      <!-- Message d'erreur -->
       <div id="error-message" class="notification is-danger is-light" style="display: none;">
         ⚠️ Nous n'avons pas pu confirmer votre inscription.
       </div>
       
-      <!-- Message de succès -->
       <div id="success-message" class="notification is-success is-light" style="display: none;">
         ✅ Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.
       </div>
     
-    <!-- Formulaire Brevo stylisé avec Bulma -->
-    <div id="sib-form-container" class="sib-form-container" style="max-width: 540px; margin: 0 auto;">
-      
-      <!-- Message d'erreur (caché par défaut) -->
-      <div id="error-message" class="notification is-danger is-light" style="display: none;">
-        ⚠️ Nous n'avons pas pu confirmer votre inscription.
-      </div>
-      
-      <!-- Message de succès (caché par défaut) -->
-      <div id="success-message" class="notification is-success is-light" style="display: none;">
-        ✅ Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.
-      </div>
-      
-      <!-- Formulaire stylisé -->
-      <form id="sib-form" method="POST" action="https://99b18cc2.sibforms.com/serve/MUIFANx-I7JnVuE4Fc_BVbvYKDQ-21rkxvaacMSMGqRg-iVMM0bVK-2q5sLpqEAjrfNmZjyw2LhPu9iQe26d8rlF68_ml3Gcr2vjQE1FV_HrvTqT_TAPuFM0kATRNgm8eF94Bpk0QrQSbBW6nibmO9UbLgsmwuoJVkWIvQCbrXW5LnxO6S-NbMy-0k8MuSnd0gY5nJ714kQLrfIv4w==" data-type="subscription">
-        
-        <!-- Champ email avec style Bulma -->
-        <div class="field">
-          <label class="label has-text-left" style="color: #3C4858; font-weight: 700;">
-            Veuillez renseigner votre adresse email pour vous inscrire <span class="has-text-danger">*</span>
-          </label>
-          <div class="control">
-            <input 
-              class="input is-medium" 
-              type="email" 
-              id="EMAIL" 
-              name="EMAIL" 
-              placeholder="ton@email.com" 
-              required
-              style="background-color: rgba(255,255,255,0.9);"
-            >
-          </div>
-          <p class="help has-text-left" style="color: #8390A4;">
-            Ex. : abc@xyz.com
-          </p>
-        </div>
-
-        <!-- Case à cocher RGPD avec style Bulma -->
-        <div class="field">
-          <div class="control">
-            <label class="checkbox" style="font-size: 14px; text-align: left; display: block;">
-              <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required>
-              <span class="ml-2">J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.</span>
-              <span class="has-text-danger">*</span>
+      <div id="sib-form-container" class="sib-form-container" style="max-width: 540px; margin: 0 auto;">
+        <form id="sib-form" method="POST" action="https://99b18cc2.sibforms.com/serve/MUIFANx-I7JnVuE4Fc_BVbvYKDQ-21rkxvaacMSMGqRg-iVMM0bVK-2q5sLpqEAjrfNmZjyw2LhPu9iQe26d8rlF68_ml3Gcr2vjQE1FV_HrvTqT_TAPuFM0kATRNgm8eF94Bpk0QrQSbBW6nibmO9UbLgsmwuoJVkWIvQCbrXW5LnxO6S-NbMy-0k8MuSnd0gY5nJ714kQLrfIv4w==" data-type="subscription">
+          
+          <div class="field">
+            <label class="label has-text-left" style="color: #3C4858; font-weight: 700;">
+              Veuillez renseigner votre adresse email pour vous inscrire <span class="has-text-danger">*</span>
             </label>
+            <div class="control">
+              <input 
+                class="input is-medium" 
+                type="email" 
+                id="EMAIL" 
+                name="EMAIL" 
+                placeholder="ton@email.com" 
+                required
+                style="background-color: rgba(255,255,255,0.9);"
+              >
+            </div>
+            <p class="help has-text-left" style="color: #8390A4;">
+              Ex. : abc@xyz.com
+            </p>
           </div>
-          <p class="help has-text-left" style="color: #8390A4; margin-top: 5px;">
-            Vous pouvez vous désinscrire à tout moment en cliquant sur le lien présent dans nos emails.
-          </p>
-        </div>
 
-        <!-- Bouton d'envoi stylisé -->
-        <div class="field is-grouped is-grouped-centered mt-5">
-          <div class="control">
-            <button 
-              type="submit" 
-              class="button is-dark is-medium" 
-              style="min-width: 200px; background-color: #3E4857;"
-              id="submit-button"
-            >
-              <span class="icon is-small mr-2" id="submit-icon" style="display: none;">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
-                  <path d="M12 2v4M12 22v-4M4 12H2h2M22 12h-2 2M19.07 4.93l-2.83 2.83M6.9 17.1l-2.83 2.83M17.1 6.9l2.83-2.83M4.93 19.07l2.83-2.83" stroke="white" stroke-width="2" stroke-linecap="round">
-                    <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
-                  </path>
-                </svg>
-              </span>
-              <span id="submit-text">S'INSCRIRE</span>
-            </button>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" style="font-size: 14px; text-align: left; display: block;">
+                <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" required>
+                <span class="ml-2">J'accepte de recevoir vos e-mails et confirme avoir pris connaissance de votre politique de confidentialité et mentions légales.</span>
+                <span class="has-text-danger">*</span>
+              </label>
+            </div>
+            <p class="help has-text-left" style="color: #8390A4; margin-top: 5px;">
+              Vous pouvez vous désinscrire à tout moment en cliquant sur le lien présent dans nos emails.
+            </p>
           </div>
-        </div>
 
-        <!-- Champs cachés requis par Brevo -->
-        <input type="text" name="email_address_check" value="" class="input--hidden" style="display: none;">
-        <input type="hidden" name="locale" value="fr">
-      </form>
+          <div class="field is-grouped is-grouped-centered mt-5">
+            <div class="control">
+              <button 
+                type="submit" 
+                class="button is-dark is-medium" 
+                style="min-width: 200px; background-color: #3E4857;"
+                id="submit-button"
+              >
+                <span class="icon is-small mr-2" id="submit-icon" style="display: none;">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                    <path d="M12 2v4M12 22v-4M4 12H2h2M22 12h-2 2M19.07 4.93l-2.83 2.83M6.9 17.1l-2.83 2.83M17.1 6.9l2.83-2.83M4.93 19.07l2.83-2.83" stroke="white" stroke-width="2" stroke-linecap="round">
+                      <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                    </path>
+                  </svg>
+                </span>
+                <span id="submit-text">S'INSCRIRE</span>
+              </button>
+            </div>
+          </div>
+
+          <input type="text" name="email_address_check" value="" class="input--hidden" style="display: none;">
+          <input type="hidden" name="locale" value="fr">
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer class="footer content-section">
     <div class="container has-text-centered">
       <p class="mb-3">jef le cri &copy; 2026</p>
-    
       <div class="social-icons is-flex is-justify-content-center is-gap-3">
-        <a href="https://www.instagram.com/jef_le_cri/" class="social-link" aria-label="Instagram" target="_blank">
+        <a href="https://www.instagram.com/jef_le_cri/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
           <svg class="social-logo" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://soundcloud.com/semaflore" class="social-link" aria-label="SoundCloud" target="_blank">
+        <a href="https://soundcloud.com/semaflore" class="social-link" aria-label="SoundCloud" target="_blank" rel="noopener">
           <svg class="social-logo" viewBox="0 0 24 24"><path d="M17.243 12.353c-.54-.73-1.39-1.255-2.38-1.255-.99 0-1.84.525-2.38 1.255l-8.302-4.666c-.2-.113-.423-.18-.653-.18-.905 0-1.637.732-1.637 1.637v9.448c0 .905.732 1.637 1.637 1.637.23 0 .452-.067.653-.18l8.302-4.666c.54.73 1.39 1.255 2.38 1.255.99 0 1.84-.525 2.38-1.255l2.998 1.685c.2.113.423.18.653.18.905 0 1.637-.732 1.637-1.637v-9.448c0-.905-.732-1.637-1.637-1.637-.23 0-.452.067-.653.18l-2.998 1.685z"/></svg>
         </a>
-        <a href="lecrie@gmail.com" class="social-link" aria-label="Email">
+        <a href="mailto:lecrie@gmail.com" class="social-link" aria-label="Email">
           <svg class="social-logo" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts JS séparés -->
- 
+  <!-- Scripts -->
   <script src="js/sanity-client.js"></script>
-<script src="js/render-concerts.js"></script>
-<script src="js/render-bio.js"></script>
-<script src="js/render-playlist.js"></script>
+  <script src="js/render-concerts.js"></script>
+  <script src="js/render-bio.js"></script>
+  <script src="js/render-playlist.js"></script>
   <script src="js/player.js"></script>
   <script src="js/newsletter-brevo.js"></script>
   <script src="js/menu.js"></script>
 </body>
 </html>
-
